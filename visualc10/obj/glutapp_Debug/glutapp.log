@@ -1,0 +1,89 @@
+﻿  app_main.cpp
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grrect.h(35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grrect.h(36): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grrect.h(38): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grrect.h(39): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grrect.h(80): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grrect.h(99): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grrect.h(130): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grrect.h(131): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grrect.h(132): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(68): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(70): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(72): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(76): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(78): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(80): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(83): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(87): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(89): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(91): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(107): error C3861: 'time': identifier not found
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(108): error C3861: 'localtime': identifier not found
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(120): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(125): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(126): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(137): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(141): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(144): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(145): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(150): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(151): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(170): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(171): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(177): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(178): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(183): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(184): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(190): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(191): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(202): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(202): warning C4305: '+=': truncation from 'double' to 'float'
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(208): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(209): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grplot.h(7): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  app_window.cpp
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grrect.h(35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grrect.h(36): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grrect.h(38): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grrect.h(39): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grrect.h(80): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grrect.h(99): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grrect.h(130): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grrect.h(131): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grrect.h(132): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(68): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(70): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(72): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(76): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(78): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(80): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(83): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(87): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(89): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(91): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(107): error C3861: 'time': identifier not found
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(108): error C3861: 'localtime': identifier not found
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(120): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(125): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(126): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(137): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(141): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(144): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(145): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(150): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(151): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(170): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(171): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(177): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(178): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(183): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(184): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(190): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(191): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(202): error C2065: 'M_PI': undeclared identifier
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(202): warning C4305: '+=': truncation from 'double' to 'float'
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(208): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\clock.h(209): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\lmoor\desktop\uc merced courses\cse165\final project\freeglutapp\grplot.h(7): fatal error C1083: Cannot open include file: 'GL/glut.h': No such file or directory
+  Generating Code...

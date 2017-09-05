@@ -105,19 +105,7 @@ void AppWindow::handle(const Event& e) {
   const float incx = 0.02f;
   const float incy = 0.02f;
   if (e.type == SpecialKey) switch (e.key) {
-      // case GLUT_KEY_LEFT:
-      // _markx -= incx;
-      // break;
-      // case GLUT_KEY_RIGHT:
-      // _markx += incx;
-      // break;
-      // case GLUT_KEY_UP:
-      // _marky += incy;
-      // break;
-      // case GLUT_KEY_DOWN:
-      // _marky -= incy;
-      // break;
-      // default:
+
       rd = false;  // no redraw
     }
 

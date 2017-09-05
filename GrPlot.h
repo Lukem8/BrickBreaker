@@ -70,22 +70,20 @@ class QuadraticCurve : public GrPlot
 		{
 
 		
-		float yPt = 0;
-		float xPt = xini;
-		while (xPt <= xend) 
-			{
-				yPt = (a * xPt * xPt) + (b * xPt) + c;
-				add(xPt, yPt);
-				xPt += inc;
-			}
+		  float yPt = 0;
+		  float xPt = xini;
+		  while (xPt <= xend) 
+		  {
+		    yPt = (a * xPt * xPt) + (b * xPt) + c;
+		    add(xPt, yPt);
+		    xPt += inc;
+		  }
 		}
 
 		void scale()
 		{
 
-				int end = points.size() - 1;
-	
-			
+			int end = points.size() - 1;
 
 			float minY = 0;
 			float maxY = 0;
@@ -93,48 +91,30 @@ class QuadraticCurve : public GrPlot
 
 			for (int i = 0; i < points.size(); i++) 
 			{
-				if(points[i]->y > maxY)
-					maxY = points[i]->y;
+			  if(points[i]->y > maxY)
+			    maxY = points[i]->y;
 
-				if(points[i]->y < minY)
-					minY = points[i]->y;
+			  if(points[i]->y < minY)
+			    minY = points[i]->y;
 			}
 
-			// yLength = maxY - minY;
-			// if(yLength < 0){ yLength *= -1;}
 
 			yLength = (maxY - (y - h)) - h;
 			float offset = yLength/h;
 
-		//	cout<<"minY:\t"<<minY<<"\tmaxY:\t"<<maxY<<"\tlength: "<<yLength<<"\theight: "<<h<<"\t offset: "<<offset<<endl;
-
 			float xSize = points[end]->x - points[0]->x;
 			float xOffset = (w/xSize);
 
-			//cout<<"xSize: "<<xSize<<endl;
-
-			//cout<<"xoffset: "<<xOffset<<endl;
-
 			float offsetYInit = points[0]->y - y;
-
-			for (int i = 0; i < points.size(); i++) 
-			{
-				//points[i]->y = points[i]->y - offsetYInit;
-			}
-
-
 
 			float ySize = (maxY - (y - h)) - h;
 			float yOffset = (ySize/w);
 
-			//cout<<"yoffset = ("<<h<<" / "<<ySize<<") = "<<yOffset<<endl;
-
 			for(int i = 0; i < points.size(); i++)
 			{
-				// if(yOffset != 0)
-				points[i]->y = points[i]->y - (points[i]->y *yOffset);
-				// if(xOffset != 0)
-				points[i]->x = points[i]->x *xOffset;
+
+			  points[i]->y = points[i]->y - (points[i]->y *yOffset);
+			  points[i]->x = points[i]->x *xOffset;
 				
 			}
 
@@ -168,7 +148,6 @@ class QuadraticCurve : public GrPlot
 			this->a = a;
 			this->b = b;
 			this->c = c;
-
 			this->r = rh;
 			this->g = gh;
 			this->bl = bh;
@@ -178,23 +157,13 @@ class QuadraticCurve : public GrPlot
 
 			generate(-0.5, 0.5, 0.1);
 
-			//cout<<"point[0]->x = "<<points[0]->x<<endl;
 
-				for (int i = 0; i < points.size(); i++) 
+			for (int i = 0; i < points.size(); i++) 
 			{
 				points[i]->y = points[i]->y - 0.5 * h;
 				points[i]->x = points[i]->x + 0.5 * w;
 			}
 			scale();
-
-			
-			
-
-
-
-
-		
-
 
 		}
 
@@ -204,21 +173,21 @@ class QuadraticCurve : public GrPlot
 			float xini = x;
 			float xend = x + w;
 			float inc = 0.1;
-		points.clear();
-		generate(-0.5,0.5, 0.1);
+			points.clear();
+			generate(-0.5,0.5, 0.1);
 
 		
 
-				for (int i = 0; i < points.size(); i++) 
+			for (int i = 0; i < points.size(); i++) 
 			{
 				points[i]->y = points[i]->y - 0.5 * h;
 				points[i]->x = points[i]->x + 0.5 * w;
 			}
 			scale();
 
-		//draw();
 
-			}
+
+		}
 
 		virtual void draw() 
 		{
@@ -226,11 +195,6 @@ class QuadraticCurve : public GrPlot
 			Clock* t = new Clock(0,0,0);
 			t->get();
 			t->draw();
-
-
-
-
-			
 
 			glColor3f(1.0, 1.0, 1.0);
 			glBegin(GL_POLYGON);
@@ -240,31 +204,18 @@ class QuadraticCurve : public GrPlot
 			glVertex2f(x, y - 0.1*h);
 			glEnd();
 
+			glColor3f(1.0,1.0,1.0);
+			glBegin(GL_LINES);
+			glVertex2f (x, y);
+			glVertex2f (x +w , y);
 
+			glVertex2f (x, y - h);
+			glVertex2f (x + w, y - h);
 
-			// if(focused)
-			// {
-				glColor3f(1.0,1.0,1.0);
-				glBegin(GL_LINES);
-
-				glVertex2f (x, y);
-				glVertex2f (x +w , y);
-
-				glVertex2f (x, y - h);
-				glVertex2f (x + w, y - h);
-
-				glVertex2f (x, y);
-				glVertex2f (x, y - h );
-
-				glVertex2f (x + w, y);
-				glVertex2f (x + w, y - h);
-			//}
-
-
-
-			
-
-
+			glVertex2f (x, y);
+			glVertex2f (x, y - h );
+			glVertex2f (x + w, y);
+			glVertex2f (x + w, y - h);
 
 			glColor3f(r, g, bl);
 			glBegin(GL_POLYGON);
@@ -301,29 +252,27 @@ class CubicCurve : public GrPlot
 
 		void add(float x1, float y1) 
 		{
-		Vec *b = new Vec(x1, y1);
-		points.push_back(b);
+			Vec *b = new Vec(x1, y1);
+			points.push_back(b);
 		}
 
 		void generate(float xini, float xend, float inc) 
 		{
-		float yPt = 0;
-		float xPt = xini;
-		while (xPt <= xend) 
+			float yPt = 0;
+			float xPt = xini;
+			while (xPt <= xend) 
 			{
 				yPt = (a * xPt * xPt * xPt) + (b * xPt - xPt) + (c * xPt) + d;
 				add(xPt, yPt);
 				xPt += inc;
-			}
+			}	
 		}
 
 		void scale()
 		{
 
-				int end = points.size() - 1;
+			int end = points.size() - 1;
 	
-			
-
 			float minY = 0;
 			float maxY = 0;
 
@@ -335,8 +284,6 @@ class CubicCurve : public GrPlot
 				if(points[i]->y < minY)
 					minY = points[i]->y;
 			}
-
-			//cout<<"minY:\t"<<minY<<"\tmaxY:\t"<<maxY<<endl;
 
 			float xSize = points[end]->x - points[0]->x;
 			float xOffset = (w/xSize);
@@ -352,12 +299,8 @@ class CubicCurve : public GrPlot
 
 			}
 
-
-
 			float ySize = maxY - minY;
 			float yOffset = (h/ySize);
-
-			//cout<<"yoffset = ("<<w<<" / "<<ySize<<") = "<<yOffset<<endl;
 
 			for(int i = 0; i < points.size(); i++)
 			{
@@ -385,9 +328,7 @@ class CubicCurve : public GrPlot
 
 			for (int i = 0; i < points.size(); i++) 
 			{
-				//points[i]->y = points[i]->y - 0.5 * h;
 				points[i]->x = points[i]->x + restoreX;
-				//points[i]->y = points[i]->y - restoreY;
 			}
 		}
 
@@ -407,17 +348,13 @@ class CubicCurve : public GrPlot
 
 			generate(-0.5, 0.5, 0.1);
 
-			//cout<<"point[0]->x = "<<points[0]->x<<endl;
 
-				for (int i = 0; i < points.size(); i++) 
+			for (int i = 0; i < points.size(); i++) 
 			{
 				points[i]->y = points[i]->y - 0.5 * h;
 				points[i]->x = points[i]->x + 0.5 * w;
 			}
 			scale();
-
-		
-
 
 		}
 
@@ -427,21 +364,18 @@ class CubicCurve : public GrPlot
 			float xini = x;
 			float xend = x + w;
 			float inc = 0.1;
-		points.clear();
-		generate(-0.5,0.5, 0.1);
+			points.clear();
+			generate(-0.5,0.5, 0.1);
 
 		
 
-				for (int i = 0; i < points.size(); i++) 
+			for (int i = 0; i < points.size(); i++) 
 			{
 				points[i]->y = points[i]->y - 0.5 * h;
 				points[i]->x = points[i]->x + 0.5 * w;
 			}
-			//scale();
 
-		//draw();
-
-			}
+		}
 
 		virtual void draw() 
 		{
@@ -504,45 +438,38 @@ class CubicCurve : public GrPlot
 			glVertex2f(x + (0.5 * w), y - h);
 			glEnd();
 
-			 glColor3f(0.0, 0.0, 0.0); 
-  glRasterPos2f(x + 0.1*w, y - 0.1*h);
+			glColor3f(0.0, 0.0, 0.0); 
+  			glRasterPos2f(x + 0.1*w, y - 0.1*h);
 
 
 
-  glutBitmapString(GLUT_BITMAP_HELVETICA_18, reinterpret_cast<const unsigned char*>("Cubic Curve"));
+  			glutBitmapString(GLUT_BITMAP_HELVETICA_18, reinterpret_cast<const unsigned char*>("Cubic Curve"));
 
-  glColor3f(1.0, 1.0, 1.0); 
-  glRasterPos2f(x  , (y - h) - 0.2);
+  			glColor3f(1.0, 1.0, 1.0); 
+  			glRasterPos2f(x  , (y - h) - 0.2);
 
-char aPtr[8];
-sprintf(aPtr,"%.2f", a);
+			char aPtr[8];
+			sprintf(aPtr,"%.2f", a);
 
-char bPtr[8];
-sprintf(bPtr,"%.2f", b);
+			char bPtr[8];
+			sprintf(bPtr,"%.2f", b);
 
-char cPtr[8];
-sprintf(cPtr,"%.2f", c);
+			char cPtr[8];
+			sprintf(cPtr,"%.2f", c);
 
-char dPtr[8];
-sprintf(dPtr,"%.2f", d);
-
-
-string aValue(aPtr);
-string bValue(bPtr);
-string cValue(cPtr);
-string dValue(dPtr);
+			char dPtr[8];
+			sprintf(dPtr,"%.2f", d);
 
 
-string output = aValue+ "x^3 + "+ bValue + "x^2 + "+ cValue + "x + "+ dValue;
+			string aValue(aPtr);
+			string bValue(bPtr);
+			string cValue(cPtr);
+			string dValue(dPtr);
 
 
+			string output = aValue+ "x^3 + "+ bValue + "x^2 + "+ cValue + "x + "+ dValue;
 
-  glutBitmapString(GLUT_BITMAP_HELVETICA_12, (const unsigned char *)output.c_str());
-
-
-
-
-
+  			glutBitmapString(GLUT_BITMAP_HELVETICA_12, (const unsigned char *)output.c_str());
 
 			glColor3f(1.0, 1.0, 1.0);
 			glBegin(GL_POLYGON);

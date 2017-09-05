@@ -7,22 +7,6 @@
 
 using namespace std;
 
-/* TODO: Specific Powerup colors, powerup timer, sound on ball impacts.			
-
-http://www.learnopengl.com/#!In-Practice/2D-Game/Audio
-#include <irrklang/irrKlang.h>
-using namespace irrklang;
-
-ISoundEngine *SoundEngine = createIrrKlangDevice();
-  
-void Game::Init()
-{
-    [...]
-    SoundEngine->play2D("audio/breakout.mp3", GL_TRUE);
-}
-
-
-*/
 
 
 class Block : public GrRect {
@@ -57,9 +41,6 @@ public:
             glVertex2f(x + w + 0.015, y - h - 0.015);
             glVertex2f(x - 0.015, y - h - 0.015);
 
-
-
-
             glEnd();
 
             glColor3f(r, g, b);
@@ -69,14 +50,6 @@ public:
             glVertex2f(x + w, y - h);
             glVertex2f(x, y - h);
             glEnd();
-
-            // glColor3f(0.0, 0.0, 0.0);
-            // glBegin(GL_POLYGON);
-            // glVertex2f(x + 0.015, y - 0.015);
-            // glVertex2f(x + w + 0.015, y - 0.015);
-            // glVertex2f(x + w + 0.015, y - h - 0.015);
-            // glVertex2f(x + 0.015, y - h - 0.015);
-            // glEnd();
 
 
         }
@@ -303,21 +276,6 @@ public:
                     elements[i]->yDirectionSpeed *= -1.0;
                     elements[0]->setColor(1.0, 0.0, 0.0);
 
-                    // if (elements[i]->x + 0.5 * elements[i]->w > elements[0]->x + 0.5 * elements[0]->w)
-                    //     elements[i]->xDirectionSpeed = (elements[i]->x + 0.5 * elements[i]->w) - (elements[0]->x + 0.5 * elements[0]->w);
-                    // else
-                    //     elements[i]->xDirectionSpeed = -1.0 * (elements[0]->x + 0.5 * elements[0]->w) - (elements[i]->x + 0.5 * elements[i]->w);
-
-                    // if (elements[i]->xDirectionSpeed > 0.01 && elements[i]->xDirectionSpeed > 0.0)
-                    //     elements[i]->xDirectionSpeed *= 0.0125;
-
-                    // if (elements[i]->xDirectionSpeed < 0.01 && elements[i]->xDirectionSpeed < 0.0)
-                    //     elements[i]->xDirectionSpeed *= 0.0125;
-
-                    // cout<<"Ball: "<<(elements[i]->x + 0.5 * elements[i]->w)<<"\tPaddle: "<< (elements[i]->x + 0.5 * elements[i]->w)<<endl;
-                    // float x = (elements[i]->x + 0.5 * elements[i]->w) - (elements[0]->x + 0.5 * elements[0]->w);
-                    // cout<<x<<endl;
-
 
                     if (elements[i]->x + 0.5 * elements[i]->w > elements[0]->x + 0.5 * elements[0]->w) {
                         elements[i]->xDirectionSpeed = (elements[i]->x + 0.5 * elements[i]->w) - (elements[0]->x + 0.5 * elements[0]->w);
@@ -417,45 +375,6 @@ public:
             float r2 = ((float(rand()) / float(RAND_MAX)));
             float r3 = ((float(rand()) / float(RAND_MAX)));
 
-
-            // if(numBlocks == 10)
-            // {
-
-            //     if(yPos > -0.2)
-            //     {
-            //         yPos -= 0.1;
-            //     }
-            //     else
-            //     {
-            //         yPos = 0.9;
-            //         xPos  += blockWidth + 0.2;
-            //     }
-            // }
-            // else
-            // {
-
-            // int modNum = (numBlocks / 10) * 6;
-
-            // int numPerRow = numBlocks % modNum;
-            // cout << numPerRow << endl;
-
-
-            // bool newLayer = xPos + blockWidth > (-0.9 + (blockWidth * numPerRow));
-
-            // cout << "Block: " << i << "\t" << newLayer << endl;
-            // cout << xPos + blockWidth << " > " << -0.9 + (blockWidth * numPerRow) << endl;
-
-
-            // if (xPos + blockWidth >= (-0.9 + (blockWidth * numPerRow)))
-            // {
-            //     elements.push_back(new Block(xPos, yPos, blockWidth, 0.1, r1, r2, r3));
-            //     offset += blockWidth / 2;
-            //     xPos = -0.9 + offset;
-            //     yPos -= 0.1;
-            //     numPerRow = numPerRow - 1;
-            // }
-
-            // }
             if (xPos + 0.30 > 1 )
             {
                 offset += 0.2;
@@ -467,40 +386,6 @@ public:
             elements.push_back(new Block(xPos, yPos, blockWidth, 0.1, r1, r2, r3));
             xPos += blockWidth;
 
-
-            // // if(numBlocks == 10)
-            // // {
-
-            // //     if(yPos > -0.2)
-            // //     {
-            // //         yPos -= 0.1;
-            // //     }
-            // //     else
-            // //     {
-            // //         yPos = 0.9;
-            // //         xPos  += blockWidth + 0.2;
-            // //     }
-            // // }
-            // // else
-            // // {
-
-            // if (xPos + blockWidth > 1 - offset && (xPos + offset) != (1 - offset))
-            // {
-            //     offset += 0.2;
-            //     xPos = -0.9 + offset;
-            //     yPos -= 0.1;
-            // }
-
-            // // }
-            // //   if(xPos + 0.30 > 1 )
-            // // {
-            // //     offset += 0.2;
-            // //     xPos = -0.9 + offset;
-            // //     yPos -= 0.1;
-            // // }
-
-            // elements.push_back(new Block(xPos, yPos, blockWidth, 0.1, r1, r2, r3));
-            // xPos += blockWidth;
         }
     }
 
@@ -622,18 +507,6 @@ public:
         glVertex2f(1.0, -1.0);
         glVertex2f(0.96, -1.0);
         glEnd();
-
-       
-
-
-
-        // glColor3f(0.2, 0.4, 0.2);    //background color
-        // glBegin(GL_POLYGON);
-        // glVertex2f(-1.0, 1.0);
-        // glVertex2f(-1.0, -1.0);
-        // glVertex2f(1.0, -1.0);
-        // //glVertex2f(-1.0, -1.0);
-        // glEnd();
 
         glColor3f(0.2, 0.2, 0.0); //background color
         glBegin(GL_POLYGON);

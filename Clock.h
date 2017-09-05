@@ -96,20 +96,20 @@ class Clock : public GrRect{
   int getMinutes() { return minutes; }
   int getSeconds() { return seconds; }
 
-     void setHour(int newY){hours = newY;}
-     void setMinute(int newW){minutes = newW;}
-     void setSecond(int newH){seconds = newH;}
+  void setHour(int newY){hours = newY;}
+  void setMinute(int newW){minutes = newW;}
+  void setSecond(int newH){seconds = newH;}
 
  
 
 
-    void get (){
-        time_t t = time(NULL);
-        tm* tm = localtime ( &t ); // returns pointer to a static object
-        hours = tm->tm_hour;
-        minutes = tm->tm_min;
-        seconds = tm->tm_sec;
-    }
+  void get (){
+      time_t t = time(NULL);
+      tm* tm = localtime ( &t ); // returns pointer to a static object
+      hours = tm->tm_hour;
+      minutes = tm->tm_min;
+      seconds = tm->tm_sec;
+  }
 
   void draw() 
   {
@@ -117,41 +117,32 @@ class Clock : public GrRect{
 
 	glColor3f(1.0,0.0,0.0);
 	
-	 for (float theta = 0; theta <= 2 * M_PI; theta += M_PI/6) 
-	 {
-	 	glBegin(GL_LINES);
-
- 
- glVertex2f ((0.9*w)*0.5*cos(theta)+ x + (0.5*w ) , (0.9*h)*0.5*sin(theta) + y - (0.5*h));
-       glVertex2f ((0.9*w)*0.5*0.78*cos(theta) + x + (0.5*w ) , (0.9*h)*0.5*0.78*sin(theta) + y - (0.5*h));
-
-    
-
-		glEnd();
+	for (float theta = 0; theta <= 2 * M_PI; theta += M_PI/6) 
+	{
+	  glBegin(GL_LINES);
+ 	  glVertex2f ((0.9*w)*0.5*cos(theta)+ x + (0.5*w ) , (0.9*h)*0.5*sin(theta) + y - (0.5*h));
+          glVertex2f ((0.9*w)*0.5*0.78*cos(theta) + x + (0.5*w ) , (0.9*h)*0.5*0.78*sin(theta) + y - (0.5*h));
+          glEnd();
 	}
 
+	for (float theta = 0; theta <= 2 * M_PI; theta += M_PI/30) 
+	{
+	  glBegin(GL_LINES);
 
+          if(theta >= -M_PI/2 && theta <= M_PI/2)
+          {
 
+           glVertex2f ((0.9*w)*0.5*cos(theta)+ x + (0.5*w ) , (0.9*h)*0.5*sin(theta)+ y - (0.5*h));
+           glVertex2f ((0.9*w)*0.5*0.95*cos(theta) + x + (0.5*w ), (0.9*h)*0.5*0.95*sin(theta) + y - (0.5*h));
+          }
+          else
+          {
 
-
-	 for (float theta = 0; theta <= 2 * M_PI; theta += M_PI/30) 
-	 {
-	 	glBegin(GL_LINES);
-
-        if(theta >= -M_PI/2 && theta <= M_PI/2)
-        {
-
-         glVertex2f ((0.9*w)*0.5*cos(theta)+ x + (0.5*w ) , (0.9*h)*0.5*sin(theta)+ y - (0.5*h));
-        glVertex2f ((0.9*w)*0.5*0.95*cos(theta) + x + (0.5*w ), (0.9*h)*0.5*0.95*sin(theta) + y - (0.5*h));
-        }
-        else
-        {
-
-         glVertex2f ((0.9*w)*0.5*cos(theta)+ x + (0.5*w ) , (0.9*h)*0.5*sin(theta)+ y - (0.5*h));
-        glVertex2f ((0.9*w)*0.5*0.95*cos(theta) + x + (0.5*w ) , (0.9*h)*0.5*0.95*sin(theta) + y - (0.5*h));
-        }
+           glVertex2f ((0.9*w)*0.5*cos(theta)+ x + (0.5*w ) , (0.9*h)*0.5*sin(theta)+ y - (0.5*h));
+           glVertex2f ((0.9*w)*0.5*0.95*cos(theta) + x + (0.5*w ) , (0.9*h)*0.5*0.95*sin(theta) + y - (0.5*h));
+          }
 	 	
-		glEnd();
+	  glEnd();
 	}
 
 
@@ -162,69 +153,56 @@ class Clock : public GrRect{
 	getAngles(hourAngle,minAngle,secAngle);
 
 
-    if(getTime)
-		get();
-		if(hours > 12)
-		hours -= 12;
+        if(getTime)
+	  get();
+	if(hours > 12)
+	  hours -= 12;
 
-  xOffset = (x+w) - (xScale*cos(0)  + x + (0.5*w ));
-    yOffset = (y-h) - ((0.9*h)*0.5*cos(-M_PI/2)  + y + (0.5*h ));
-
-
-
-		glColor3f(0.0,0.0,0.0);
-		glBegin(GL_LINES);
-		glVertex2f (x + 0.5*w, y - 0.5*h);
-   		glVertex2f ((0.9*w)*0.5*0.4*cos(hourAngle) + x + (0.5*w ), (0.9*h)*0.5*0.4*sin(hourAngle) + y - (0.5*h));
-		glEnd();
-
-		glColor3f(0.0,0.0,0.0);
-		glBegin(GL_LINES);
-	 glVertex2f (x + 0.5*w, y - 0.5*h);
-   		glVertex2f ((0.9*w)*0.5*0.7*cos(minAngle) + x + (0.5*w ), (0.9*h)*0.5*0.7*sin(minAngle) + y - (0.5*h));
-		glEnd();
-
-
-		glColor3f(1.0,0.0,0.0);
-		glBegin(GL_LINES);
-		  glVertex2f (x + 0.5*w, y - 0.5*h);
-   		glVertex2f ((0.9*w)*0.5*0.7*cos(secAngle) + x + (0.5*w ), (0.9*h)*0.5*0.7*sin(secAngle) + y - (0.5*h));
-		glEnd();
-
-		//cout << getHours() << " : " << getMinutes() << " : " << getSeconds() << endl;
+        xOffset = (x+w) - (xScale*cos(0)  + x + (0.5*w ));
+        yOffset = (y-h) - ((0.9*h)*0.5*cos(-M_PI/2)  + y + (0.5*h ));
 
 
 
+	glColor3f(0.0,0.0,0.0);
+	glBegin(GL_LINES);
+	glVertex2f (x + 0.5*w, y - 0.5*h);
+   	glVertex2f ((0.9*w)*0.5*0.4*cos(hourAngle) + x + (0.5*w ), (0.9*h)*0.5*0.4*sin(hourAngle) + y - (0.5*h));
+	glEnd();
+
+	glColor3f(0.0,0.0,0.0);
+	glBegin(GL_LINES);
+	glVertex2f (x + 0.5*w, y - 0.5*h);
+   	glVertex2f ((0.9*w)*0.5*0.7*cos(minAngle) + x + (0.5*w ), (0.9*h)*0.5*0.7*sin(minAngle) + y - (0.5*h));
+	glEnd();
 
 
-	    glBegin(GL_POLYGON);
-	    glColor3f(1.0, 1.0, 1.0);
-	    for (float theta = 0; theta <=  2*M_PI; theta += 0.1) 
-	    {
+	glColor3f(1.0,0.0,0.0);
+	glBegin(GL_LINES);
+	glVertex2f (x + 0.5*w, y - 0.5*h);
+   	glVertex2f ((0.9*w)*0.5*0.7*cos(secAngle) + x + (0.5*w ), (0.9*h)*0.5*0.7*sin(secAngle) + y - (0.5*h));
+	glEnd();
 
-        
-        if(xScale != 0)
-        {
-	      	glVertex2f((0.9*w)*0.5*cos(theta)  + x + (0.5*w ) , (0.9*h)*0.5*sin(theta)  + y - (0.5*h) );
-          glVertex2f((0.9*w)*0.5*cos(theta)  + x + (0.5*w ) , (0.9*h)*0.5*sin(theta)  + y - (0.5*h) );
-        }
+	glBegin(GL_POLYGON);
+	glColor3f(1.0, 1.0, 1.0);
+	for (float theta = 0; theta <=  2*M_PI; theta += 0.1) 
+	{
 
-	    }
-	    glEnd();
+          if(xScale != 0)
+          {
+	    glVertex2f((0.9*w)*0.5*cos(theta)  + x + (0.5*w ) , (0.9*h)*0.5*sin(theta)  + y - (0.5*h) );
+            glVertex2f((0.9*w)*0.5*cos(theta)  + x + (0.5*w ) , (0.9*h)*0.5*sin(theta)  + y - (0.5*h) );
+          }
 
+	}
+	glEnd();
 
-	    
-			glColor3f(1.0, 0.0,0.0);
-			glBegin(GL_POLYGON);
-			glVertex2f(x, y);
-			glVertex2f(x + w, y);
-			glVertex2f(x + w,y - h);
-			glVertex2f(x, y - h);
-			glEnd();
-
-
-      // cout<<"xDistance: "<<xDistance<<endl;
-      // cout<<"yDistance: "<<yDistance<<endl;
+	glColor3f(1.0, 0.0,0.0);
+	glBegin(GL_POLYGON);
+	glVertex2f(x, y);
+	glVertex2f(x + w, y);
+	glVertex2f(x + w,y - h);
+	glVertex2f(x, y - h);
+	glEnd();
 
   }
 };
